@@ -14,7 +14,7 @@
 
 	Assume the original sequence has no other punctuation and all words will be available in the dictionary file provided.
 
-## <i>Functions</i>
+## <i>Functions:</i>
 * Split (i)
 	- Determines whether it's possible to correctly add spaces to x<sub>1</sub>x<sub>2</sub>...x<sub>n</sub>
 	- Two outputs
@@ -23,7 +23,7 @@
 * Dict(w)
 	- Check if the passed string of 'word' is valid in the dictionary provided.
 
-# <i>Usage / Input</i>
+# <i>Usage / Input:</i>
 	The first line of input is an...
 > <b>Integer C</b> -- The number of lines in the file
 	
