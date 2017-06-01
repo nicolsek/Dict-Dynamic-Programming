@@ -1,6 +1,8 @@
 # <i>Dict-Dynamic-Programming</i>
 
-	A C++ implementation of reading through a string of characters using an iterative bottom up solution and recursive memoized solution to find if it's possible to insert spaces in order to create English words out of them with a dictionary that's provided.
+		A C++ implementation of reading through a string of characters using an iterative 
+	bottom up solution and recursive memoized solution to find if it's possible to insert 
+	spaces in order to create English words out of them with a dictionary that's provided.
 
 ## <i>Problem:</i>
 	We want to devise a dynamic programming solution to the following problem: there is a string of characters which might have been a sequence of words with all the spaces removed, and we want to find a way, if any, in which to insert spaces that separate valid English words. For example,
