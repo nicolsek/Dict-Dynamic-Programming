@@ -1,15 +1,39 @@
 #include <iostream>
 #include <stdio.h>
+//Filthy strings -.-
+#include <string.h>
+#include <fstream>
+//Unordered Set -- Cheap Hash Table \-0~0-/
+#include <unordered_set>
+
+//Create a reference to the dictionary.
+std::unordered_set<std::string> dictRef;
 
 // dict ... Check if the passed word is valid in the dictionary.
-bool dict(const char *word) {
-    bool isWord = false;
+bool dict(std::string word) {
 
-    return isWord;
+    //If it exists return true.
+    if (dictRef.count(word) > 0) {
+        return true;
+    }
+
+    return false;
+}
+
+// loadDictionary ... Load the dictionary into memory.
+void loadDictionary() {
+    //Load file by name.
+    std::fstream file("dictionBig.txt");
+    std::string line;
+
+    //Get all lines until EOF.
+    while (file >> line) {
+        dictRef.insert(line);
+    }
 }
 
 // split ... Is it possible to add spaces to x1 ... xn to create a string of English words.
-bool split(const char *line) {
+bool split(std::string line) {
     bool canSplit = false;
 
     return canSplit;
@@ -21,9 +45,13 @@ void handleInput() {
     unsigned int C;
     std::cin >> C;
 
+    //Line for std::cin to read in.
+    std::string line;
+
     //Creating the loop that reads all of the lines.
-    for (int line = 0; line < C; line++) {
-    
+    for (int lineCount = 0; lineCount < C + 1; lineCount++) {
+        getline(std::cin, line);
+        split(line);
     }
 
     //Debug information.
@@ -32,6 +60,12 @@ void handleInput() {
 
 // main ... The main function.
 int main() {
+    //Load the dictionary into memory.
+    loadDictionary();
+
+    //Handle / Parse the input.
     handleInput();
+    
+    //And we're done!
     return 0;
 };
