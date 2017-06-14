@@ -1,23 +1,26 @@
 #include <iostream>
 #include <stdio.h>
+#include <map>
 //Filthy strings -.-
 #include <string.h>
 #include <fstream>
 //Unordered Set -- Cheap Hash Table \-0~0-/
 #include <unordered_set>
 
+//Memoized array of string, bool pairs.
+std::map<std::string, bool> memoizedMemory;
+
 //Create a reference to the dictionary.
 std::unordered_set<std::string> dictRef;
-
 // dict ... Check if the passed word is valid in the dictionary.
 bool dict(std::string word) {
 
-    //If it exists return true.
-    if (dictRef.count(word) > 0) {
-        return true;
+    if (memoizedMemory.count(word) <= 0) {
+	   	//If it exists return true.
+	   	memoizedMemory[word] = (1 && dictRef.count(word));
     }
 
-    return false;
+    return memoizedMemory[word];
 }
 
 // loadDictionary ... Load the dictionary into memory.
