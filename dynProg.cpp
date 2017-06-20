@@ -1,8 +1,7 @@
 #include <iostream>
-#include <stdio.h>
 #include <map>
 //Filthy strings -.-
-#include <string.h>
+#include <string>
 #include <fstream>
 //Unordered Set -- Cheap Hash Table \-0~0-/
 #include <unordered_set>
@@ -17,7 +16,7 @@ bool dict(std::string word) {
 
     if (memoizedMemory.count(word) <= 0) {
 	   	//If it exists return true.
-	   	memoizedMemory[word] = (1 && dictRef.count(word));
+	   	memoizedMemory[word] = (dictRef.count(word));
     }
 
     return memoizedMemory[word];
@@ -37,9 +36,8 @@ void loadDictionary() {
 
 // split ... Is it possible to add spaces to x1 ... xn to create a string of English words.
 bool split(std::string line) {
-    bool canSplit = false;
-
-    return canSplit;
+    //theyouthevent
+    //the + you + the + vent
 }
 
 // handleInput ... Handle the data given from standard input.
